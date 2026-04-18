@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Afrikuda Consulting</title>
+  <meta name="description" content="Practical support for growing organisations. Afrikuda offers consulting services and AfriOps training for NGOs, civil society organisations, and small businesses across Africa.">
+  <link rel="canonical" href="https://afrikuda.com/">
+  <meta property="og:title" content="Afrikuda Consulting">
+  <meta property="og:description" content="Practical support for growing organisations. Consulting services and AfriOps training for NGOs, civil society organisations, and small businesses across Africa.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://afrikuda.com/">
+  <meta property="og:site_name" content="Afrikuda Consulting">
+  <meta property="og:image" content="https://afrikuda.com/afrikuda-linkedin-preview.png">
+  <meta property="og:locale" content="en_ZA">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Afrikuda Consulting">
+  <meta name="twitter:description" content="Practical support for growing organisations.">
+  <meta name="twitter:image" content="https://afrikuda.com/afrikuda-linkedin-preview.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --cream: #F7F3EC;
+      --cream-dark: #E6DFD2;
+      --charcoal: #1E1E1E;
+      --charcoal-mid: #3A3A3A;
+      --accent: #8A6918;
+      --accent-light: #D4AE5A;
+      --muted: #645B4F;
+      --white: #FFFFFF;
+      --focus: #0B57D0;
+      --max: 1100px;
+      --radius: 10px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    a, button, input, select, textarea { font: inherit; }
+    img { max-width: 100%; height: auto; }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: var(--charcoal);
+      color: var(--white);
+      padding: 12px 16px;
+      z-index: 1000;
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      left: 16px;
+      top: 16px;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(247,243,236,0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--cream-dark);
+      padding: 0 5%;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .nav-brand {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--charcoal);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-brand span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      font-size: 15px;
+      text-decoration: none;
+      color: var(--charcoal-mid);
+    }
+
+    .nav-links a:hover { color: var(--accent); }
+
+    .nav-cta {
+      background: var(--accent);
+      color: var(--white) !important;
+      padding: 11px 18px;
+      border-radius: 999px;
+    }
+
+    .nav-cta:hover { background: var(--charcoal); }
+
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--charcoal);
+      margin: 5px 0;
+    }
+
+    @media (max-width: 820px) {
+      .hamburger { display: block; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--cream);
+        border-bottom: 1px solid var(--cream-dark);
+        padding: 20px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links.open { display: flex; }
+    }
+
+    main section { padding: 88px 5%; }
+    .container { max-width: var(--max); margin: 0 auto; }
+    .section-kicker {
+      display: inline-block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    .gold-rule {
+      width: 44px;
+      height: 3px;
+      background: var(--accent);
+      margin-bottom: 28px;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      line-height: 1.15;
+      letter-spacing: -0.4px;
+      margin-bottom: 18px;
+    }
+
+    h1 { font-size: clamp(42px, 7vw, 78px); color: var(--white); }
+    h2 { font-size: clamp(30px, 4vw, 44px); }
+    h3 { font-size: 22px; }
+    p { color: var(--muted); margin-bottom: 16px; max-width: 720px; }
+
+    .hero {
+      background: var(--charcoal);
+      padding-top: 120px;
+      padding-bottom: 104px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(212,174,90,0.14) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-label {
+      display: inline-block;
+      color: var(--accent-light);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent-light);
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.82);
+      max-width: 620px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-block;
+      text-decoration: none;
+      padding: 14px 22px;
+      border-radius: 999px;
+      transition: 0.2s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-primary:hover { background: #6f5513; }
+
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.36);
+      color: var(--white);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--accent-light);
+      color: var(--accent-light);
+    }
+
+    #about { background: var(--white); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 54px;
+      align-items: start;
+    }
+
+    .values-list {
+      list-style: none;
+      display: grid;
+      gap: 14px;
+    }
+
+    .values-list li {
+      border: 1px solid var(--cream-dark);
+      border-radius: var(--radius);
+      padding: 18px 18px 16px;
+      background: var(--cream);
+    }
+
+    .values-list strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--charcoal);
+    }
+
+    #offerings { background: var(--cream); }
+
+    .offerings-intro { max-width: 760px; margin-bottom: 30px; }
+
+    .offerings-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .offerings-tab-btn {
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      color: var(--charcoal-mid);
+      padding: 14px 18px;
+      border-radius: 999px;
+      cursor: pointer;
+      min-height: 48px;
+    }
+
+    .offerings-tab-btn[aria-selected="true"] {
+      background: var(--charcoal);
+      border-color: var(--charcoal);
+      color: var(--white);
+    }
+
+    .offerings-panel {
+      display: none;
+      background: var(--white);
+      border: 1px solid var(--cream-dark);
+      border-radius: 18px;
+      padding: 34px;
+    }
+
+    .offerings-panel.active { display: block; }
+
+    .panel-header {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      margin-bottom: 30px;
+    }
+
+    .panel-kicker {
+      display: inline-block;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .panel-subhead {
+      color: var(--muted);
+      font-style: italic;
+      margin-top: -8px;
+      margin-bottom: 14px;
+    }
+
+    .meta-grid, .card-grid {
+      display: grid;
+      gap: 12px;
+    }
+
+    .meta-grid { grid-template-columns: repeat(2, 1fr); }
+    .card-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .meta-card,
+    .offer-card,
+    .contact-form-wrap,
+    .popia-note {
+      border-radius: var(--radius);
+    }
+
+    .meta-card {
+      background: var(--cream);
+      padding: 18px;
+    }
+
+    .meta-card strong {
+      display: block;
+      color: var(--charcoal);
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .meta-card p,
+    .offer-card p,
+    .offer-note p,
+    .popia-note p { max-width: 100%; }
+
+    .offer-card {
+      background: var(--cream);
+      padding: 24px;
+    }
+
+    .offer-list {
+      list-style: none;
+    }
+
+    .offer-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--cream-dark);
+      color: var(--muted);
+    }
+
+    .offer-list li:last-child { border-bottom: none; }
+
+    .offer-note {
+      margin-top: 18px;
+      background: #fff8e9;
+      border-left: 3px solid var(--accent);
+      padding: 20px 22px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+    }
+
+    #contact { background: var(--white); }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .contact-stack {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .contact-item {
+      display: grid;
+      grid-template-columns: 40px 1fr;
+      gap: 14px;
+      align-items: start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--cream-dark);
+    }
+
+    .contact-item:last-child { border-bottom: none; }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      background: var(--cream);
+      display: grid;
+      place-items: center;
+    }
+
+    .contact-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 4px;
+    }
+
+    .contact-value,
+    .contact-value a {
+      color: var(--charcoal);
+      text-decoration: none;
+    }
+
+    .contact-form-wrap {
+      background: var(--cream);
+      padding: 24px;
+    }
+
+    .contact-form-wrap h3 { margin-bottom: 8px; }
+    .contact-form-intro {
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 16px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+
+    .contact-form label {
+      display: block;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      border: 1px solid #cfc5b7;
+      background: var(--white);
+      padding: 14px 15px;
+      border-radius: 8px;
+      color: var(--charcoal);
+    }
+
+    .contact-form textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    .help-text {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      padding: 0 !important;
+      margin: -1px !important;
+      overflow: hidden !important;
+      clip: rect(0,0,0,0) !important;
+      white-space: nowrap !important;
+      border: 0 !important;
+    }
+
+    .popia-note {
+      background: var(--cream);
+      padding: 20px 22px;
+      margin-top: 20px;
+      border-left: 3px solid var(--accent);
+    }
+
+    footer {
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.7);
+      padding: 32px 5%;
+    }
+
+    .footer-wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer-brand {
+      font-family: 'Playfair Display', serif;
+      color: var(--accent-light);
+      font-size: 22px;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid,
+      .panel-header,
+      .contact-grid,
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .meta-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      main section { padding: 72px 5%; }
+      .offerings-panel { padding: 24px; }
+      .form-grid,
+      .meta-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero p { font-size: 17px; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <nav aria-label="Main navigation">
+    <a href="#home" class="nav-brand">Afri<span>kuda</span></a>
+    <button class="hamburger" type="button" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" onclick="closeMenu()">About</a></li>
+      <li><a href="#offerings" onclick="closeMenu()">Offerings</a></li>
+      <li><a href="#contact" class="nav-cta" onclick="closeMenu()">Get in touch</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content">
+    <section class="hero" id="home">
+      <div class="container">
+        <span class="hero-label">Afrikuda Consulting · Johannesburg</span>
+        <h1>Practical support for <em>growing organisations.</em></h1>
+        <p>We work with NGOs, civil society organisations, and small businesses across Africa, building the governance, systems, and capacity that help organisations do their work well.</p>
+        <div class="hero-actions">
+          <a href="#offerings" class="btn-primary">View offerings</a>
+          <a href="https://cal.com/afrikuda/free-15-minute-consultation" class="btn-tertiary" target="_blank" rel="noopener">Book a free 15-minute consultation</a>
+          <a href="#contact" class="btn-secondary">Get in touch</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <span class="section-kicker">About Afrikuda</span>
+        <div class="gold-rule" aria-hidden="true"></div>
+        <div class="about-grid">
+          <div>
+            <h2>Built from the inside out.</h2>
+            <p>Afrikuda is a governance and strategy consultancy with over 15 years of experience supporting organisations across civil society and the private sector in Africa.</p>
+            <p>We bring legal, programme, and operational expertise to the challenges organisations face every day. Our work is grounded in lived experience. We have worked inside the organisations we now support, leading programmes, managing budgets, navigating governance, and building systems under real pressure.</p>
+            <p>We work across governance and compliance, programme design and evaluation, resource mobilisation, partnerships, and operational systems. We focus on solutions that are practical, affordable, and built to last.</p>
+          </div>
+          <div>
+            <h3>What we stand for</h3>
+            <ul class="values-list">
+              <li><strong>Empowerment</strong><span>We believe organisations should have the tools they need to do their work well.</span></li>
+              <li><strong>Integrity</strong><span>We are honest about what is possible. We do not oversell and we do not disappear after delivery.</span></li>
+              <li><strong>Collaboration</strong><span>We work with organisations, not at them. The best solutions come from inside.</span></li>
+              <li><strong>Impact</strong><span>We measure our success by what changes in practice, not only by what we deliver.</span></li>
+              <li><strong>Innovation</strong><span>We keep looking for better ways to work, especially when resources are tight.</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="offerings">
+      <div class="container">
+        <span class="section-kicker">Offerings</span>
+        <div class="gold-rule" aria-hidden="true"></div>
+        <div class="offerings-intro">
+          <h2>Choose the offering that fits what you need.</h2>
+          <p>Consulting Services and AfriOps are distinct offerings. Use the tabs below to move directly to the one that is relevant to you.</p>
+        </div>
+
+        <div class="offerings-tabs" role="tablist" aria-label="Afrikuda offerings">
+          <button class="offerings-tab-btn" id="tab-consulting" role="tab" aria-selected="true" aria-controls="offering-consulting" tabindex="0">Consulting Services</button>
+          <button class="offerings-tab-btn" id="tab-ngo" role="tab" aria-selected="false" aria-controls="offering-ngo" tabindex="-1">AfriOps · NGOs &amp; Civil Society</button>
+          <button class="offerings-tab-btn" id="tab-biz" role="tab" aria-selected="false" aria-controls="offering-biz" tabindex="-1">AfriOps · Small Businesses</button>
+        </div>
+
+        <section class="offerings-panel active" id="offering-consulting" role="tabpanel" aria-labelledby="tab-consulting">
+          <div class="panel-header">
+            <div>
+              <span class="panel-kicker">Consulting Services</span>
+              <h2>Tailored consulting engagements</h2>
+              <p>Consulting Services are scoped to the needs of each organisation. This is separate from AfriOps, which is a cohort-based training offer.</p>
+            </div>
+            <div class="meta-grid">
+              <div class="meta-card"><strong>Format</strong><p>Tailored consulting engagements scoped to context and need.</p></div>
+              <div class="meta-card"><strong>Who it is for</strong><p>NGOs, civil society organisations, and small businesses.</p></div>
+              <div class="meta-card"><strong>Pricing</strong><p>Quoted individually based on the scope of work.</p></div>
+              <div class="meta-card"><strong>How to enquire</strong><p>Use the contact form below for a written enquiry, or book a free 15-minute consultation.</p></div>
+            </div>
+          </div>
+          <div class="card-grid">
+            <div class="offer-card">
+              <h3>Governance and compliance</h3>
+              <p>Governance structures, board development, policy frameworks, compliance reviews, and accountability mechanisms.</p>
+            </div>
+            <div class="offer-card">
+              <h3>Programme design and evaluation</h3>
+              <p>Needs assessment, programme design, implementation support, monitoring and evaluation frameworks, and mixed-methods evaluation.</p>
+            </div>
+            <div class="offer-card">
+              <h3>Resource mobilisation and systems</h3>
+              <p>Fundraising strategy, donor engagement, partnership support, operational reviews, SOP development, and systems strengthening.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="offerings-panel" id="offering-ngo" role="tabpanel" aria-labelledby="tab-ngo" hidden>
+          <div class="panel-header">
+            <div>
+              <span class="panel-kicker">AfriOps · Stream 01</span>
+              <h2>NGOs and Civil Society</h2>
+              <p class="panel-subhead">Do More With Less · Wednesdays 10:00–12:00 SAST</p>
+              <p>AfriOps is a live, cohort-based training offer. This stream is for NGOs and civil society organisations that want stronger systems without expensive software or duplicated effort.</p>
+            </div>
+            <div class="meta-grid">
+              <div class="meta-card"><strong>Format</strong><p>6 weekly live online sessions. 2 hours per session on Google Meet.</p></div>
+              <div class="meta-card"><strong>First cohort</strong><p>Week of 8 June 2026. Registration closes 31 May 2026.</p></div>
+              <div class="meta-card"><strong>Certificate</strong><p>Participants attending 5 of 6 sessions receive an AfriOps Certificate of Completion.</p></div>
+              <div class="meta-card"><strong>Pricing</strong><p>From R500 per module or R2,000 for the full stream.</p></div>
+            </div>
+          </div>
+          <div class="card-grid">
+            <div class="offer-card">
+              <h3>Modules</h3>
+              <ul class="offer-list">
+                <li>Where Does the Time Actually Go?</li>
+                <li>Your Free Tech Stack</li>
+                <li>Donor Comms and Reporting Without Drowning</li>
+                <li>Programme Tracking Without Expensive Software</li>
+                <li>Board Admin and Governance Made Simple</li>
+                <li>SOPs Your Team Will Actually Use</li>
+              </ul>
+            </div>
+            <div class="offer-card">
+              <h3>How it works</h3>
+              <ul class="offer-list">
+                <li>Minimum 10, maximum 20 participants per stream.</li>
+                <li>Each session ends with a short preparation task.</li>
+                <li>A one-page reference document is shared after every session.</li>
+                <li>Sessions are not recorded.</li>
+              </ul>
+            </div>
+            <div class="offer-card">
+              <h3>Investment</h3>
+              <ul class="offer-list">
+                <li>Single module — per seat: R500</li>
+                <li>Any 3 modules — per seat: R1,200</li>
+                <li>Full stream (6 modules) — per seat: R2,000</li>
+                <li>Closed cohort — full stream: R18,000 flat</li>
+              </ul>
+            </div>
+          </div>
+          <div class="offer-note">
+            <p><strong>Founding cohort</strong></p>
+            <p>Founding organisations receive a 15% discount on full stream bookings in exchange for a written testimonial within two weeks of completing the programme.</p>
+          </div>
+        </section>
+
+        <section class="offerings-panel" id="offering-biz" role="tabpanel" aria-labelledby="tab-biz" hidden>
+          <div class="panel-header">
+            <div>
+              <span class="panel-kicker">AfriOps · Stream 02</span>
+              <h2>Small Businesses</h2>
+              <p class="panel-subhead">Streamline to Scale · Thursdays 10:00–12:00 SAST</p>
+              <p>This stream is for small businesses that want to reduce admin drag, cut repeated manual work, and build systems that do not depend on one person for everything.</p>
+            </div>
+            <div class="meta-grid">
+              <div class="meta-card"><strong>Format</strong><p>6 weekly live online sessions. 2 hours per session on Google Meet.</p></div>
+              <div class="meta-card"><strong>First cohort</strong><p>Week of 8 June 2026. Registration closes 31 May 2026.</p></div>
+              <div class="meta-card"><strong>Certificate</strong><p>Participants attending 5 of 6 sessions receive an AfriOps Certificate of Completion.</p></div>
+              <div class="meta-card"><strong>Pricing</strong><p>From R500 per module or R2,000 for the full stream.</p></div>
+            </div>
+          </div>
+          <div class="card-grid">
+            <div class="offer-card">
+              <h3>Modules</h3>
+              <ul class="offer-list">
+                <li>Audit Your Week</li>
+                <li>Your Free Business Tech Stack</li>
+                <li>Automating Client Follow-Up, Invoicing and Scheduling</li>
+                <li>Stock, Suppliers and Admin Without the Chaos</li>
+                <li>Getting AI to Do the Grunt Work</li>
+                <li>Building Systems So the Business Doesn’t Run Only on You</li>
+              </ul>
+            </div>
+            <div class="offer-card">
+              <h3>How it works</h3>
+              <ul class="offer-list">
+                <li>Minimum 10, maximum 20 participants per stream.</li>
+                <li>Each session ends with a short preparation task.</li>
+                <li>A one-page reference document is shared after every session.</li>
+                <li>Sessions are not recorded.</li>
+              </ul>
+            </div>
+            <div class="offer-card">
+              <h3>Investment</h3>
+              <ul class="offer-list">
+                <li>Single module — per seat: R500</li>
+                <li>Any 3 modules — per seat: R1,200</li>
+                <li>Full stream (6 modules) — per seat: R2,000</li>
+                <li>Closed cohort — full stream: R18,000 flat</li>
+              </ul>
+            </div>
+          </div>
+          <div class="offer-note">
+            <p><strong>Cancellation policy</strong></p>
+            <p>Cancellations more than 10 business days before the first session receive a 75% refund. Cancellations within 10 business days are non-refundable. Seats may be transferred to the next intake at no charge before the first session.</p>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <span class="section-kicker">Get in touch</span>
+        <div class="gold-rule" aria-hidden="true"></div>
+        <div class="contact-grid">
+          <div>
+            <h2>Tell us what you need.</h2>
+            <p>Use the form for written enquiries about Consulting Services or AfriOps. If you would prefer to speak first, you can book a free 15-minute consultation.</p>
+            <div class="contact-stack">
+              <div class="contact-item">
+                <div class="contact-icon" aria-hidden="true">✉</div>
+                <div>
+                  <span class="contact-label">Email</span>
+                  <div class="contact-value"><a href="mailto:letstalk@afrikuda.com">letstalk@afrikuda.com</a></div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon" aria-hidden="true">📱</div>
+                <div>
+                  <span class="contact-label">WhatsApp</span>
+                  <div class="contact-value"><a href="https://wa.me/27783291505?text=Hello%20Afrikuda" target="_blank" rel="noopener">+27 78 329 1505</a></div>
+                </div>
+              </div>
+              <div class="contact-item">
+                <div class="contact-icon" aria-hidden="true">📍</div>
+                <div>
+                  <span class="contact-label">Location</span>
+                  <div class="contact-value">Johannesburg, South Africa</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="booking-card">
+              <h3>Book a free 15-minute consultation</h3>
+              <p>Choose a suitable time and answer a few short questions in advance. This booking link is separate from the enquiry form.</p>
+              <a href="https://cal.com/afrikuda/free-15-minute-consultation" class="btn-primary" target="_blank" rel="noopener">Book now</a>
+            </div>
+
+            <div class="contact-form-wrap">
+              <h3>Contact form</h3>
+              <p class="contact-form-intro">Use the form for a general enquiry, a consulting enquiry, or an AfriOps booking enquiry.</p>
+              <form class="contact-form" name="afrikuda-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thank-you.html">
+                <input type="hidden" name="form-name" value="afrikuda-enquiry">
+                <p class="visually-hidden">
+                  <label>Don’t fill this out if you’re human: <input name="bot-field"></label>
+                </p>
+
+                <div class="form-grid">
+                  <div>
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" autocomplete="name" required>
+                  </div>
+                  <div>
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" autocomplete="email" required>
+                  </div>
+                </div>
+
+                <div class="form-grid">
+                  <div>
+                    <label for="organisation">Organisation</label>
+                    <input id="organisation" name="organisation" type="text" autocomplete="organization">
+                  </div>
+                  <div>
+                    <label for="interest">Offering</label>
+                    <select id="interest" name="interest" required>
+                      <option value="">Select an option</option>
+                      <option>Consulting Services</option>
+                      <option>AfriOps · NGOs &amp; Civil Society</option>
+                      <option>AfriOps · Small Businesses</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-grid">
+                  <div>
+                    <label for="enquiry-type">Type of enquiry</label>
+                    <select id="enquiry-type" name="enquiry-type" required>
+                      <option value="">Select an option</option>
+                      <option>General enquiry</option>
+                      <option>Consulting enquiry</option>
+                      <option>AfriOps seat booking</option>
+                      <option>Closed cohort booking</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label for="timeline">Preferred timeline <span style="font-weight:400; color:var(--muted)">(optional)</span></label>
+                    <input id="timeline" name="timeline" type="text" placeholder="For example: June 2026">
+                  </div>
+                </div>
+
+                <div>
+                  <label for="seats">Seats needed <span style="font-weight:400; color:var(--muted)">(optional)</span></label>
+                  <input id="seats" name="seats" type="number" min="1" inputmode="numeric">
+                </div>
+
+                <div>
+                  <label for="message">How can we help?</label>
+                  <textarea id="message" name="message" required aria-describedby="message-help"></textarea>
+                  <p id="message-help" class="help-text">You can share a short outline of what you are looking for.</p>
+                </div>
+
+                <button type="submit" class="btn-primary">Get in touch</button>
+              </form>
+            </div>
+
+            <div class="popia-note">
+              <p>Afrikuda is fully POPIA compliant. We collect the information in this form only to respond to your enquiry and, where relevant, for billing and communication purposes. We do not collect or share more information than is needed for those purposes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews section can be added later once testimonials are ready. -->
+  </main>
+
+  <footer>
+    <div class="footer-wrap">
+      <div class="footer-brand">Afrikuda</div>
+      <div>© 2026 Afrikuda Consulting · Johannesburg, South Africa · afrikuda.com</div>
+    </div>
+  </footer>
+
+  <script>
+    const tabButtons = Array.from(document.querySelectorAll('[role="tab"]'));
+    const tabPanels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+
+    function activateTab(button) {
+      const targetId = button.getAttribute('aria-controls');
+
+      tabButtons.forEach((btn) => {
+        const selected = btn === button;
+        btn.setAttribute('aria-selected', String(selected));
+        btn.setAttribute('tabindex', selected ? '0' : '-1');
+      });
+
+      tabPanels.forEach((panel) => {
+        const show = panel.id === targetId;
+        panel.classList.toggle('active', show);
+        panel.hidden = !show;
+      });
+    }
+
+    tabButtons.forEach((button, index) => {
+      button.addEventListener('click', () => activateTab(button));
+      button.addEventListener('keydown', (event) => {
+        let nextIndex = index;
+
+        if (event.key === 'ArrowRight') nextIndex = (index + 1) % tabButtons.length;
+        if (event.key === 'ArrowLeft') nextIndex = (index - 1 + tabButtons.length) % tabButtons.length;
+        if (event.key === 'Home') nextIndex = 0;
+        if (event.key === 'End') nextIndex = tabButtons.length - 1;
+
+        if (nextIndex !== index) {
+          event.preventDefault();
+          tabButtons[nextIndex].focus();
+          activateTab(tabButtons[nextIndex]);
+        }
+
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          activateTab(button);
+        }
+      });
+    });
+
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      const hamburger = document.querySelector('.hamburger');
+      if (!nav || !hamburger) return;
+      const isOpen = nav.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+    }
+
+    function closeMenu() {
+      const nav = document.getElementById('navLinks');
+      const hamburger = document.querySelector('.hamburger');
+      if (!nav || !hamburger) return;
+      nav.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+
+    document.addEventListener('click', function (e) {
+      const nav = document.getElementById('navLinks');
+      const hamburger = document.querySelector('.hamburger');
+      if (!nav || !hamburger) return;
+      if (window.innerWidth <= 820 && nav.classList.contains('open') && !nav.contains(e.target) && !hamburger.contains(e.target)) {
+        closeMenu();
+      }
+    });
+  </script>
+</body>
+</html>
